@@ -1,0 +1,346 @@
+﻿<Window x:Class="InformationSecurityApp.Views.DashboardWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Система інформаційної безпеки"
+        Height="820"
+        Width="900"
+        MinHeight="700"
+        MinWidth="900"
+        WindowStartupLocation="CenterScreen"
+        Background="#F7F5F5">
+
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Верхня панель -->
+        <Border Grid.Row="0"
+                Background="#FCE5E5"
+                CornerRadius="16"
+                Padding="15">
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0">
+                    <TextBlock Text="INFORMATION SECURITY"
+                               FontSize="11"
+                               FontWeight="Bold"
+                               Foreground="#B85C5C"/>
+
+                    <TextBlock Text="Система захисту інформації"
+                               FontSize="24"
+                               FontWeight="SemiBold"
+                               Foreground="#493F3F"
+                               Margin="0,10,0,5"
+                               TextWrapping="Wrap"/>
+
+                    <TextBlock x:Name="WelcomeText"
+                               Text="Вітаємо!"
+                               FontSize="15"
+                               Foreground="#655A5A"
+                               Margin="0,4,0,0"/>
+
+                    <TextBlock x:Name="RoleText"
+                               Text="Роль користувача"
+                               FontSize="13"
+                               Foreground="#817575"
+                               Margin="0,5,0,0"/>
+                </StackPanel>
+
+                <Border Grid.Column="1"
+                        Background="#FFFFFF"
+                        CornerRadius="12"
+                        Padding="16"
+                        Margin="15,0,10,0"
+                        VerticalAlignment="Center">
+                    <StackPanel>
+                        <TextBlock Text="ПАРАМЕТРИ ВАРІАНТА"
+                                   FontSize="10"
+                                   FontWeight="Bold"
+                                   Foreground="#B85C5C"/>
+
+                        <TextBlock Text="N = 8"
+                                   FontSize="12"
+                                   Margin="0,8,0,0"/>
+
+                        <TextBlock Text="T = 8"
+                                   FontSize="12"
+                                   Margin="0,4,0,0"/>
+
+                        <TextBlock Text="R = 64"
+                                   FontSize="12"
+                                   Margin="0,4,0,0"/>
+
+                        <TextBlock Text="ElGamal"
+                                   FontSize="12"
+                                   FontWeight="SemiBold"
+                                   Margin="0,4,0,0"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Border>
+
+        <!-- Заголовок робочої області -->
+        <StackPanel Grid.Row="1"
+                    Margin="0,10,0,10">
+
+            <TextBlock Text="Робоча область"
+                       FontSize="19"
+                       FontWeight="SemiBold"
+                       Foreground="#493F3F"/>
+
+            <TextBlock Text="Оберіть потрібний модуль системи"
+                       FontSize="11"
+                       Foreground="#817575"
+                       Margin="0,5,0,0"/>
+        </StackPanel>
+
+        <!-- Основні модулі -->
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="213*"/>
+                <ColumnDefinition Width="202*"/>
+                <ColumnDefinition Width="11*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Керування користувачами -->
+            <Border Grid.Row="0"
+                    Grid.Column="0"
+                    Background="White"
+                    BorderBrush="#EADADA"
+                    BorderThickness="1"
+                    CornerRadius="14"
+                    Padding="20"
+                    Margin="0,0,10,10">
+
+                <StackPanel>
+
+
+                    <TextBlock Text="Користувачі"
+                               FontSize="19"
+                               FontWeight="SemiBold"
+                               Foreground="#493F3F"
+                               Margin="0,8,0,5"/>
+
+                    <TextBlock Text="Реєстрація, перегляд та видалення облікових записів."
+                               TextWrapping="Wrap"
+                               FontSize="13"
+                               Foreground="#817575"
+                               Margin="0,0,0,16"/>
+
+                    <Button x:Name="ManageUsersButton"
+                            Content="Управління користувачами"
+                            Height="38"
+                            HorizontalAlignment="Stretch"
+                            Background="#C86D6D"
+                            Foreground="White"
+                            BorderThickness="0"
+                            Cursor="Hand"
+                            Click="ManageUsersButton_Click"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Автентифікація -->
+            <Border Grid.Row="0"
+                    Grid.Column="1"
+                    Background="White"
+                    BorderBrush="#EADADA"
+                    BorderThickness="1"
+                    CornerRadius="14"
+                    Padding="20"
+                    Margin="10,0,0,10" Grid.ColumnSpan="2">
+
+                <StackPanel>
+
+
+                    <TextBlock Text="Автентифікація"
+                               FontSize="19"
+                               FontWeight="SemiBold"
+                               Foreground="#493F3F"
+                               Margin="0,8,0,5"/>
+
+                    <TextBlock Text="Перевірка користувача за допомогою функції F(X)."
+                               TextWrapping="Wrap"
+                               FontSize="13"
+                               Foreground="#817575"
+                               Margin="0,0,0,16"/>
+
+                    <Button Content="Перевірити F(X)"
+                            Height="38"
+                            HorizontalAlignment="Stretch"
+                            Background="#EADADA"
+                            Foreground="#493F3F"
+                            BorderThickness="0"
+                            Cursor="Hand"
+                            Click="ScrollToFunction_Click"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Криптографія -->
+            <Border Grid.Row="1"
+                    Grid.Column="0"
+                    Background="White"
+                    BorderBrush="#EADADA"
+                    BorderThickness="1"
+                    CornerRadius="14"
+                    Padding="20"
+                    Margin="0,10,10,10">
+
+                <StackPanel>
+
+
+                    <TextBlock Text="Криптографічний захист"
+                               FontSize="19"
+                               FontWeight="SemiBold"
+                               Foreground="#493F3F"
+                               Margin="0,8,0,5"/>
+
+                    <TextBlock Text="Шифрування, розшифрування та робота з ключами ElGamal."
+                               TextWrapping="Wrap"
+                               FontSize="13"
+                               Foreground="#817575"
+                               Margin="0,0,0,16"/>
+
+                    <Button Content="Криптографія"
+                            Height="38"
+                            Background="#EADADA"
+                            Foreground="#493F3F"
+                            BorderThickness="0"
+                            Cursor="Hand"
+                            Click="CryptoButton_Click"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Журнал -->
+            <Border Grid.Row="1"
+                    Grid.Column="1"
+                    Background="White"
+                    BorderBrush="#EADADA"
+                    BorderThickness="1"
+                    CornerRadius="14"
+                    Padding="20"
+                    Margin="10,10,0,10" Grid.ColumnSpan="2">
+
+                <StackPanel>
+
+
+                    <TextBlock Text="Журнал подій"
+                               FontSize="19"
+                               FontWeight="SemiBold"
+                               Foreground="#493F3F"
+                               Margin="0,8,0,5"/>
+
+                    <TextBlock Text="Перегляд записів про вхід та дії користувачів."
+                               TextWrapping="Wrap"
+                               FontSize="13"
+                               Foreground="#817575"
+                               Margin="0,0,0,16"/>
+
+                    <Button Content="Відкрити журнал"
+                            Height="38"
+                            Background="#EADADA"
+                            Foreground="#493F3F"
+                            BorderThickness="0"
+                            Cursor="Hand"
+                            Click="AuditButton_Click"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Обчислення функції -->
+            <Border Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    Background="#FCE5E5"
+                    CornerRadius="14"
+                    Padding="20"
+                    Margin="0,10,0,10">
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="130"/>
+                        <ColumnDefinition Width="160"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0"
+                                VerticalAlignment="Center"
+                                Margin="0,0,12,0">
+                        <TextBlock Text="Перевірка математичної функції"
+                                   FontSize="17"
+                                   FontWeight="SemiBold"
+                                   Foreground="#493F3F"/>
+
+                        <TextBlock Text="F(X) = 4X ln 7"
+                                   FontSize="14"
+                                   Foreground="#655A5A"
+                                   Margin="0,6,0,0"/>
+
+                        <TextBlock x:Name="ResultText"
+                                   Text="Результат з'явиться після обчислення."
+                                   FontSize="13"
+                                   Foreground="#A94F4F"
+                                   TextWrapping="Wrap"
+                                   Margin="0,8,0,0"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1"
+                                VerticalAlignment="Center"
+                                Margin="0,0,10,0">
+                        <TextBlock Text="Значення X"
+                                   FontSize="12"
+                                   Foreground="#655A5A"
+                                   Margin="0,0,0,5"/>
+
+                        <TextBox x:Name="XInput"
+                                 Text="2"
+                                 Height="36"
+                                 Padding="8"
+                                 VerticalContentAlignment="Center"
+                                 FontSize="14"
+                                 Background="White"
+                                 BorderBrush="#E4CACA"/>
+                    </StackPanel>
+
+                    <Button Grid.Column="2"
+                            Content="Обчислити F(X)"
+                            Height="38"
+                            VerticalAlignment="Center"
+                            Background="#C86D6D"
+                            Foreground="White"
+                            BorderThickness="0"
+                            Cursor="Hand"
+                            Click="CalculateButton_Click"/>
+                </Grid>
+            </Border>
+
+            <!-- Робота з файлами -->
+            <Button Grid.Row="3"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    Content="Робота з файлами"
+                    Height="42"
+                    Margin="0,0,0,4"
+                    Background="#C86D6D"
+                    Foreground="White"
+                    FontSize="14"
+                    FontWeight="SemiBold"
+                    BorderThickness="0"
+                    Cursor="Hand"
+                    Click="FileOperationsButton_Click"/>
+        </Grid>
+    </Grid>
+</Window>

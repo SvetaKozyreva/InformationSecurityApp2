@@ -1,0 +1,6 @@
+﻿admin|admin123|Admin|2099-12-31|A:RWAE;B:RWAE;C:RWAE;D:RWAE;E:RWAE
+r|r|Admin|2026-11-20|A:RWAE;B:RWAE;C:RWAE;D:RWAE;E:RWAE
+aa|aa|User|2026-11-20|A:RWA;B:R;C:R;D:R;E:R
+gg|gg|User|2026-11-23|A:R;B:R;C:R;D:R;E:R
+d|d|User|2026-11-23|A:R;B:R;C:R;D:R;E:R
+sa|a|User|2026-11-23|A:R;B:R;C:R;D:R;E:R
